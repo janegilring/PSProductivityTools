@@ -40,6 +40,7 @@ The module currently contains the following functions:
 - Add Pester tests
 - Add help
 - IFTTT integration for muting cell phone when starting a new Pomodoro session
+- Initial setup for Skype for Business client custom precence state
 
 # Contributors
 
