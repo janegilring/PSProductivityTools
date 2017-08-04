@@ -12,7 +12,7 @@
 RootModule = 'PSProductivityTools.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1'
+ModuleVersion = '0.1.1'
 
 # ID used to uniquely identify this module
 GUID = 'f462209f-6b4d-4788-bd08-63e9a8b05f93'
@@ -27,7 +27,7 @@ CompanyName = 'PS Community'
 Copyright = '(c) 2017 Jan Egil Ring & Ståle Hansen. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'Contains PowerShell commands for working with System Center Data Protection Manager and Microsft Azure Backup Server.'
+Description = 'The PSProductivityTools PowerShell module contains commands for productivity tools & topics such as time management.'
 
 # Minimum version of the Windows PowerShell engine required by this module
 PowerShellVersion = '4.0'
