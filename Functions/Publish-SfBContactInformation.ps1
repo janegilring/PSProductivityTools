@@ -8,7 +8,7 @@ function Publish-SfBContactInformation {
 .DESCRIPTION
    The purpose of Publish-SfBContactInformation is to demonstrate how PowerShell can be used to interact with the Lync SDK.
    Tested with Lync 2013 only.
-   Prerequisites: Lync 2013 SDK - http://www.microsoft.com/en-us/download/details.aspx?id=36824
+   Prerequisites: Lync 2013 SDK - https://msunified.net/2017/08/20/how-to-install-the-lync-2013-client-sdk-without-being-prompted-to-install-visual-studio/
 .EXAMPLE
    Publish-SfBContactInformation -Availability Available
 .EXAMPLE
@@ -61,7 +61,7 @@ function Publish-SfBContactInformation {
 
         }
         catch {
-            Write-Warning "Microsoft.Lync.Model not available, download and install the Lync 2013 SDK http://www.microsoft.com/en-us/download/details.aspx?id=36824"
+            Write-Warning "Microsoft.Lync.Model not available, download and install the Lync 2013 SDK https://msunified.net/2017/08/20/how-to-install-the-lync-2013-client-sdk-without-being-prompted-to-install-visual-studio/"
             break
         }
 
