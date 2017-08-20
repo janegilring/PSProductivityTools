@@ -41,8 +41,8 @@ The module currently contains the following functions:
 - Add help
 - IFTTT integration for muting cell phone when starting a new Pomodoro session
 - Add option for customized note when ending Pomodoro
-- Add function to set up custom presence states on local machine
-- Add function to download Lync SDK
+- Add function to set up custom presence states on local machine, links exist within script
+- Add function to download Lync SDK, links exist within script
 
 # Contributors
 
