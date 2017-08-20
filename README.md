@@ -26,6 +26,10 @@ If you want to install the module without leveraging PowerShellGet, you can eith
 
 - PowerShell 4.0 or later on the computer the module is installed on
 
+# Optional
+
+- UseCustom Presence States to enable use of CustomActivityId 1 (Pomodoro Sprint) - https://msunified.net/2017/08/20/how-to-set-custom-presence-state-in-skype-for-business-on-your-windows-machine/
+
 # Usage
 
 After installation, you can view available commands by using Get-Command:
