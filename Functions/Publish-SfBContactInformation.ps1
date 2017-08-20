@@ -9,6 +9,7 @@ function Publish-SfBContactInformation {
    The purpose of Publish-SfBContactInformation is to demonstrate how PowerShell can be used to interact with the Lync SDK.
    Tested with Lync 2013 only.
    Prerequisites: Lync 2013 SDK - https://msunified.net/2017/08/20/how-to-install-the-lync-2013-client-sdk-without-being-prompted-to-install-visual-studio/
+   Optional: Custom Presence States to enable use of CustomActivityId 1-4 - https://msunified.net/2017/08/20/how-to-set-custom-presence-state-in-skype-for-business-on-your-windows-machine/
 .EXAMPLE
    Publish-SfBContactInformation -Availability Available
 .EXAMPLE
@@ -21,6 +22,8 @@ function Publish-SfBContactInformation {
     Publish-SfBContactInformation -Availability Available -PersonalNote ("Quote of the day: " + (Get-QOTD))
 .EXAMPLE
     Publish-SfBContactInformation -Location Work
+.EXAMPLE
+    Publish-SfBContactInformation -CustomActivityId 1
 .NOTES
    For more information, see the related blog post at blog.powershell.no
 .FUNCTIONALITY
