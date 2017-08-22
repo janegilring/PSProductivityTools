@@ -12,7 +12,7 @@
 RootModule = 'PSProductivityTools.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.1'
+ModuleVersion = '0.5'
 
 # ID used to uniquely identify this module
 GUID = 'f462209f-6b4d-4788-bd08-63e9a8b05f93'
@@ -105,6 +105,27 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = '
+        0.5 -
+        Added new variables
+        [string]$EndPersonalNote = ' ',
+        [string]$IFTTMuteTrigger, #your_IFTTT_maker_mute_trigger
+        [string]$IFTTUnMuteTrigger, #your_IFTTT_maker_unmute_trigger
+        [string]$IFTTWebhookKey, #your_IFTTT_webhook_key
+
+        Updated personal note to Getting stuff done, will...
+        Added support for IFTTT webhooks, if not present, will not run, if present will run specified webhooks and key at the start and end
+        #Turn off Vibration and mute Phone using IFTTT
+        if ($IFTTMuteTrigger -ne '' -and $IFTTWebhookKey -ne ''){Invoke-RestMethod -Uri https://maker.IFTTT.com/trigger/$IFTTMuteTrigger/with/key/$IFTTWebhookKey -Method POST}
+        #Turn vibration on android phone back on using IFTTT
+        if ($IFTTUnMuteTrigger -ne '' -and $IFTTWebhookKey -ne ''){Invoke-RestMethod -Uri https://maker.IFTTT.com/trigger/$IFTTUnMuteTrigger/with/key/$IFTTWebhookKey -Method POST}
+
+        Personal note will count down the 15 final seconds before you become available, because we can :)
+        if ($i -lt 16){Publish-SfBContactInformation -PersonalNote "Getting stuff done, will be available in $i seconds"}
+
+        Added $enpersonalnote at the end, blank if not specified
+        Publish-SfBContactInformation -PersonalNote $EndPersonalNote
+        if ($EndPersonalNote -ne ' '){Write-Host -Object "Pomodoro sprint session ended, set status: Available and personal note: $EndPersonalNote" -ForegroundColor Green}
+        else {Write-Host -Object "Pomodoro sprint session ended, set status: Available and personal note: blank" -ForegroundColor Green}
         0.1 - Initial version
         '
 
