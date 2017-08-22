@@ -107,7 +107,7 @@ PrivateData = @{
         ReleaseNotes = '
         0.5 -
         Added new variables
-        [string]$EndPersonalNote = ' ',
+        [string]$EndPersonalNote ,
         [string]$IFTTMuteTrigger, #your_IFTTT_maker_mute_trigger
         [string]$IFTTUnMuteTrigger, #your_IFTTT_maker_unmute_trigger
         [string]$IFTTWebhookKey, #your_IFTTT_webhook_key
@@ -124,7 +124,7 @@ PrivateData = @{
 
         Added $enpersonalnote at the end, blank if not specified
         Publish-SfBContactInformation -PersonalNote $EndPersonalNote
-        if ($EndPersonalNote -ne ' '){Write-Host -Object "Pomodoro sprint session ended, set status: Available and personal note: $EndPersonalNote" -ForegroundColor Green}
+        if ($EndPersonalNote -ne ){Write-Host -Object "Pomodoro sprint session ended, set status: Available and personal note: $EndPersonalNote" -ForegroundColor Green}
         else {Write-Host -Object "Pomodoro sprint session ended, set status: Available and personal note: blank" -ForegroundColor Green}
         0.1 - Initial version
         '
