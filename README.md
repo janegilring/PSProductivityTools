@@ -26,9 +26,11 @@ If you want to install the module without leveraging PowerShellGet, you can eith
 
 - PowerShell 4.0 or later on the computer the module is installed on
 
-# Optional
+#Optional requirements
 
-- UseCustom Presence States to enable use of CustomActivityId 1 (Pomodoro Sprint) - https://msunified.net/2017/08/20/how-to-set-custom-presence-state-in-skype-for-business-on-your-windows-machine/
+- Enable presentation settings on workstation: https://msunified.net/2013/11/25/lock-down-your-lync-status-and-pc-notifications-using-powershell/
+- Installing Lync 2013 client SDK for presence and notes manipulation: https://msunified.net/2017/08/20/how-to-install-the-lync-2013-client-sdk-without-being-prompted-to-install-visual-studio/
+- Set up custom presence states on local machine: https://msunified.net/2017/08/20/how-to-set-custom-presence-state-in-skype-for-business-on-your-windows-machine/
 
 # Usage
 
@@ -39,12 +41,12 @@ The module currently contains the following functions:
 - **Publish-SfBContactInformation** - Publish-SfBContactInformation is a PowerShell function to configure a set of availability settings in the Skype for Business client.
 - **Start-Pomodoro** - Returns information about which DPM servers a DPM agent is attached to and what data sources is protected.
 
+Read more about getting started here: https://msunified.net/2017/08/23/set-yourself-unavailable-with-this-open-source-powershell-based-pomodoro-timer/
+
 # Planned features and todo-list
 
 - Add Pester tests
 - Add help
-- IFTTT integration for muting cell phone when starting a new Pomodoro session
-- Add option for customized note when ending Pomodoro
 
 # Contributors
 
