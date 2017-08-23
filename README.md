@@ -26,7 +26,7 @@ If you want to install the module without leveraging PowerShellGet, you can eith
 
 - PowerShell 4.0 or later on the computer the module is installed on
 
-#Optional requirements
+# Optional requirements
 
 - Enable presentation settings on workstation: https://msunified.net/2013/11/25/lock-down-your-lync-status-and-pc-notifications-using-powershell/
 - Installing Lync 2013 client SDK for presence and notes manipulation: https://msunified.net/2017/08/20/how-to-install-the-lync-2013-client-sdk-without-being-prompted-to-install-visual-studio/
