@@ -42,6 +42,7 @@ The module currently contains the following functions:
 - **Start-Pomodoro** - Initiates a new Pomodoro sprint and supports several actions such as configuring availability in Skype for Business, enable presentation mode, start music and trigger custom tasks using IFTT such as muting/unmuting a mobile device.
 
 Read more about getting started here: https://msunified.net/2017/08/23/set-yourself-unavailable-with-this-open-source-powershell-based-pomodoro-timer/
+And here: http://www.powershell.no/productivity/2017/08/24/introducing-psproductivitytools.html
 
 # Planned features and todo-list
 
