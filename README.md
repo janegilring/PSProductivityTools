@@ -39,7 +39,7 @@ After installation, you can view available commands by using Get-Command:
 
 The module currently contains the following functions:
 - **Publish-SfBContactInformation** - Publish-SfBContactInformation is a PowerShell function to configure a set of availability settings in the Skype for Business client.
-- **Start-Pomodoro** - Returns information about which DPM servers a DPM agent is attached to and what data sources is protected.
+- **Start-Pomodoro** - Initiates a new Pomodoro sprint and supports several actions such as configuring availability in Skype for Business, enable presentation mode, start music and trigger custom tasks using IFTT such as muting/unmuting a mobile device.
 
 Read more about getting started here: https://msunified.net/2017/08/23/set-yourself-unavailable-with-this-open-source-powershell-based-pomodoro-timer/
 
