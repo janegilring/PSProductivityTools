@@ -12,7 +12,7 @@
 RootModule = 'PSProductivityTools.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.5'
+ModuleVersion = '0.6'
 
 # ID used to uniquely identify this module
 GUID = 'f462209f-6b4d-4788-bd08-63e9a8b05f93'
@@ -105,6 +105,9 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = '
+        0.6 - Added error handling for setting Skype status and IFTT triggers
+              Added test to verify Skype for Business is running
+
         0.5 -
         Added new variables
         [string]$EndPersonalNote ,
@@ -126,6 +129,7 @@ PrivateData = @{
         Publish-SfBContactInformation -PersonalNote $EndPersonalNote
         if ($EndPersonalNote -ne ){Write-Host -Object "Pomodoro sprint session ended, set status: Available and personal note: $EndPersonalNote" -ForegroundColor Green}
         else {Write-Host -Object "Pomodoro sprint session ended, set status: Available and personal note: blank" -ForegroundColor Green}
+       
         0.1 - Initial version
         '
 
