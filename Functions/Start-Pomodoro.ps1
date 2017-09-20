@@ -60,15 +60,41 @@ Function Start-Pomodoro {
     $PersonalNote = "Getting stuff done, will be available at $(Get-Date $((Get-Date).AddMinutes($Minutes)) -Format HH:mm)"
   
     #Set do-not-disturb Pomodoro Foucs custom presence, where 1 is my pomodoro custom presence state
-    Publish-SfBContactInformation -CustomActivityId 1 -PersonalNote $PersonalNote
+    
+    try {
+    
+        Publish-SfBContactInformation -CustomActivityId 1 -PersonalNote $PersonalNote -ErrorAction Stop
+        
+        Write-Host -Object "Updated Skype for Business client status to custom activity 1 (Pomodoro Sprint) and personal note: $PersonalNote" -ForegroundColor Green
+        
+    }
 
-    Write-Host -Object "Updated Skype for Business client status to custom activity 1 (Pomodoro Sprint) and personal note: $PersonalNote" -ForegroundColor Green
-  
+    catch {
+
+            Write-Host -Object "Unable to update Skype for Business client status" -ForegroundColor Yellow
+
+    }
+
     #Setting computer to presentation mode, will suppress most types of popups
     presentationsettings /start
 
     #Turn off Vibration and mute Phone using IFTTT
-    if ($IFTTMuteTrigger -ne '' -and $IFTTWebhookKey -ne ''){Invoke-RestMethod -Uri https://maker.IFTTT.com/trigger/$IFTTMuteTrigger/with/key/$IFTTWebhookKey -Method POST}
+    if ($IFTTMuteTrigger -ne '' -and $IFTTWebhookKey -ne ''){
+        
+             try {
+                      
+                    $null = Invoke-RestMethod -Uri https://maker.IFTTT.com/trigger/$IFTTMuteTrigger/with/key/$IFTTWebhookKey -Method POST -ErrorAction Stop
+           
+                    Write-Host -Object "IFTT mute trigger invoked successfully" -ForegroundColor Green
+
+            }
+            catch  {
+
+                    Write-Host -Object "An error occured while invoking IFTT mute trigger: $($_.Exception.Message)" -ForegroundColor Yellow
+
+            }   
+        
+        }
   
     if (Test-Path -Path $StartNotificationSound) {
      
@@ -95,7 +121,21 @@ Function Start-Pomodoro {
     #Stopping presentation mode to re-enable outlook popups and other notifications
     presentationsettings /stop
     #Turn vibration on android phone back on using IFTTT
-    if ($IFTTUnMuteTrigger -ne '' -and $IFTTWebhookKey -ne ''){Invoke-RestMethod -Uri https://maker.IFTTT.com/trigger/$IFTTUnMuteTrigger/with/key/$IFTTWebhookKey -Method POST}
+    if ($IFTTUnMuteTrigger -ne '' -and $IFTTWebhookKey -ne ''){
+
+            try {
+                      
+                        $null = Invoke-RestMethod -Uri https://maker.IFTTT.com/trigger/$IFTTUnMuteTrigger/with/key/$IFTTWebhookKey -Method POST -ErrorAction Stop
+           
+                        Write-Host -Object "IFTT unmute trigger invoked successfully" -ForegroundColor Green
+
+            }
+            catch  {
+
+                Write-Host -Object "An error occured while invoking IFTT unmute trigger: $($_.Exception.Message)" -ForegroundColor Yellow
+
+            }   
+        }
 
     #Pomodoro session finished, resetting status and personal note, availability 1 will reset the Lync status
     Publish-SfBContactInformation -PersonalNote $EndPersonalNote
