@@ -30,6 +30,7 @@ function Publish-SfBContactInformation {
    Provides a function to configure Availability, ActivityId and PersonalNote for the Microsoft Lync client.
 #>
 
+    [CmdletBinding()]
     Param
     (
         # Availability state as string
@@ -47,6 +48,14 @@ function Publish-SfBContactInformation {
         [string]
         $Location
     )
+
+  if (-not (Get-Process -Name lync -ErrorAction SilentlyContinue)) {
+
+      Write-Warning  'Skype for Business is not running'
+
+      throw 'Unable to change status'
+
+  }
 
     if (-not (Get-Module -Name Microsoft.Lync.Model)) {
 
