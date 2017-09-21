@@ -10,6 +10,7 @@ Function Start-Pomodoro {
         [int]$Minutes = 25,
         [string]$AudioFilePath,
         [switch]$StartMusic,
+        [string]$SpotifyPlayList,
         [string]$EndPersonalNote = ' ',
         [string]$IFTTMuteTrigger, #your_IFTTT_maker_mute_trigger
         [string]$IFTTUnMuteTrigger, #your_IFTTT_maker_unmute_trigger
@@ -49,9 +50,23 @@ Function Start-Pomodoro {
 
             }
 
+        } elseif ($PSBoundParameters.ContainsKey('SpotifyPlayList') ) {
+
+            try {
+
+                Start-Process -FilePath $SpotifyPlayList -ErrorAction Stop
+
+            }
+
+            catch {
+
+                Write-Host "Launcing Spotify playlist $SpotifyPlayList failed: $($_.Exception.Message)"
+
+            }            
+
         } else {
 
-            Write-Host 'AudioFilePath not specified, no music invoked'
+            Write-Host 'Neither -AudioFilePath or -SpotifyPlayList specified, no music invoked'
 
         }
 

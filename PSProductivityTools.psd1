@@ -12,7 +12,7 @@
 RootModule = 'PSProductivityTools.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.6'
+ModuleVersion = '0.7'
 
 # ID used to uniquely identify this module
 GUID = 'f462209f-6b4d-4788-bd08-63e9a8b05f93'
@@ -105,6 +105,8 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = '
+        0.7 - Added support for launching Spotify playlists
+
         0.6 - Added error handling for setting Skype status and IFTT triggers
               Added test to verify Skype for Business is running
 
