@@ -1,9 +1,29 @@
-#By MVP Ståle Hansen (http://msunified.net) with modifications by Jan Egil Ring
-#Pomodoro function by Nathan.Run() http://nathanhoneycutt.net/blog/a-pomodoro-timer-in-powershell/
-#Lync Custom states by Jan Egil Ring http://blog.powershell.no/2013/08/08/automating-microsoft-lync-using-windows-powershell/
-#Note: for desktops you need to enable presentation settings in order to suppress email alerts, by MVP Robert Sparnaaij: https://msunified.net/2013/11/25/lock-down-your-lync-status-and-pc-notifications-using-powershell/
-
 Function Start-Pomodoro {
+
+<#
+      .SYNOPSIS
+      Start-Pomodoro is a command to start a new Pomodoro session with additional actions.
+      .DESCRIPTION
+
+        By MVP Ståle Hansen (http://msunified.net) with modifications by Jan Egil Ring
+        Pomodoro function by Nathan.Run() http://nathanhoneycutt.net/blog/a-pomodoro-timer-in-powershell/
+        Lync Custom states by Jan Egil Ring http://blog.powershell.no/2013/08/08/automating-microsoft-lync-using-windows-powershell/
+        Note: for desktops you need to enable presentation settings in order to suppress email alerts, by MVP Robert Sparnaaij: https://msunified.net/2013/11/25/lock-down-your-lync-status-and-pc-notifications-using-powershell/
+
+
+        Required version: Windows PowerShell 3.0 or later 
+
+     .EXAMPLE
+      Start-Pomodoro
+     .EXAMPLE
+      Start-Pomodoro -Minutes 10 -AudioFilePath $MusicToCodeByCollectionPath -StartMusic
+     .EXAMPLE
+      Start-Pomodoro -Minutes 15 -StartMusic -SpotifyPlayList spotify:user:johanbrook:playlist:2mtlhuFVOFMn6Ho3JmrLc2
+     .EXAMPLE
+      Start-Pomodoro -Minutes 20 -IFTTMuteTrigger pomodoro_start -IFTTUnMuteTrigger pomodoro_stop -IFTTWebhookKey XXXXXXXXX
+
+#>
+
     [CmdletBinding()]
     Param (
         #Duration of your Pomodoro Session
