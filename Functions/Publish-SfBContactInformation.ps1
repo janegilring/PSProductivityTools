@@ -115,7 +115,9 @@ function Publish-SfBContactInformation {
             $ContactInfo.Add([Microsoft.Lync.Model.PublishableContactInformationType]::PersonalNote, $PersonalNote)
         }
 
-        if ($Location) {
+	
+	# allow default/empty value
+        if ($PSBoundParameters.ContainsKey('Location')) {
             $ContactInfo.Add([Microsoft.Lync.Model.PublishableContactInformationType]::LocationName, $Location)
         }
 
