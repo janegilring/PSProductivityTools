@@ -34,7 +34,7 @@ function Publish-SfBContactInformation {
     Param
     (
         # Availability state as string
-        [ValidateSet("Appear Offline", "Available", "Away", "Busy", "Do Not Disturb", "Be Right Back", "Off Work")]
+        [ValidateSet("Appear Offline", "Available", "Away", "Busy", "Do Not Disturb", "Be Right Back", "Off Work", "Available in Teams")]
         [string]
         $Availability,
         # ActivityId as string
@@ -94,6 +94,7 @@ function Publish-SfBContactInformation {
             "Do Not Disturb" {$AvailabilityId = 9000}
             "Be Right Back" {$AvailabilityId = 12000}
             "Off Work" {$AvailabilityId = 15500}
+	    "Available in Teams" {$AvailabilityId = 15000}
         }
 
         if ($CustomActivityId) {
